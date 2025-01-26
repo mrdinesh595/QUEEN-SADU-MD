@@ -25,4 +25,5 @@ module.exports = {
     OWNER_REACT: process.env.OWNER_REACT || "true",
     BOT_NAME: process.env.BOT_NAME || "➺ᴍʀ ᴅɪɴᴇꜱʜ࿐",
     OMDB_API_KEY: process.env.OMDB_API_KEY || "76cb7f39", // omdbapi.com
-};
+    AUTO_STATUS_REPLY: process.env.AUTO_STATUS_REPLY || "𝚈𝚘𝚞𝚛 𝚂𝚝𝚊𝚝𝚞𝚜 𝚂𝚎𝚎𝚗 𝙱𝚢 𝙸𝚝𝚣'𝙼𝚎 𝙾𝚕𝚍 𝙺𝚒𝚗𝚐 𝙿𝚒𝚗𝚔 𝙿𝚊𝚗𝚝𝚑𝚎𝚛 🙈💞",
+    AUTO_STATUS_REACT: process. env.AUTO_STATUS_REACT || "true",
