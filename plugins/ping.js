@@ -21,14 +21,14 @@ async (conn, mek, m, { from, quoted, reply }) => {
 
         // Send the ping result
         await conn.sendMessage(from, { 
-            text: `*⚡ KHAN-MD SPEED: ${ping}ms*`, 
+            text: `*⚡ QUEEN-SADU SPEED: ${ping}ms*`, 
             contextInfo: {
                 mentionedJid: [m.sender],
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363354023106228@newsletter',
-                    newsletterName: 'JawadTechX',
+                    newsletterJid: '120363354023106218@newsletter',
+                    newsletterName: 'ᴍʀ ᴅɪɴᴇꜱʜ',
                     serverMessageId: 143
                 }
             }
@@ -54,7 +54,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         const message = await conn.sendMessage(from, { text: '*PINGING...*' })
         const endTime = Date.now()
         const ping = endTime - startTime
-        await conn.sendMessage(from, { text: `*🔥 KHAN-MD SPEED : ${ping}ms*` }, { quoted: message })
+        await conn.sendMessage(from, { text: `*🔥 QUEEN-SADU SPEED : ${ping}ms*` }, { quoted: message })
     } catch (e) {
         console.log(e)
         reply(`${e}`)
