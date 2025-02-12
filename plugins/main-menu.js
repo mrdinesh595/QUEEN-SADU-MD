@@ -5,8 +5,8 @@ const {runtime} = require('../lib/functions')
 const axios = require('axios')
 
 cmd({
-    pattern: "menu2",
-    alias: ["allmenu","fullmenu"],use: '.menu2',
+    pattern: "menu",
+    alias: ["allmenu","fullmenu"],use: '.menu',
     desc: "menu the bot",
     category: "menu",
     react: "⚡",
@@ -41,7 +41,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ┃◈┃• pinterest 
 ┃◈┃• spotify
 ┃◈┃• play
-┃◈┃• play2
+┃◈┃• song
 ┃◈┃• play3
 ┃◈┃• play4
 ┃◈┃• play5
@@ -288,14 +288,14 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         await conn.sendMessage(
             from,
             {
-                image: { url: `https://files.catbox.moe/juroe8.jpg` },
+                image: { url: `https://i.postimg.cc/xdMvP3XZ/In-Shot-20241222-002123636.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363354023106228@newsletter',
+                        newsletterJid: '120363354023106128@newsletter',
                         newsletterName: 'JawadTechX',
                         serverMessageId: 143
                     }
@@ -306,7 +306,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
         // Send audio
         await conn.sendMessage(from, {
-            audio: { url: 'https://github.com/JawadYTX/KHAN-DATA/raw/refs/heads/main/autovoice/menunew.m4a' },
+            audio: { url: '' },
             mimetype: 'audio/mp4',
             ptt: true
         }, { quoted: mek });
