@@ -296,7 +296,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363354023106128@newsletter',
-                        newsletterName: 'JawadTechX',
+                        newsletterName: 'ᴍʀ ᴅɪɴᴇꜱʜ',
                         serverMessageId: 143
                     }
                 }
@@ -306,7 +306,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
         // Send audio
         await conn.sendMessage(from, {
-            audio: { url: '' },
+            audio: { url: 'https://github.com/mrdinesh595/Mssadu/raw/refs/heads/main/database/menu.mp3' },
             mimetype: 'audio/mp4',
             ptt: true
         }, { quoted: mek });
