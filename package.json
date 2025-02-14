@@ -1,12 +1,12 @@
 {
-  "name": "KHAN-MD",
+  "name": "QUEEN-SADU-MD",
   "version": "3.0.0",
-  "description": "A WhatsApp Bot Created By JawadTechX",
+  "description": "A WhatsApp Bot Created By mr dinesh",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name KHAN-MD",
-    "stop": "pm2 stop KHAN-MD",
-    "restart": "pm2 restart KHAN-MD"
+    "start": "pm2 start index.js --deep-monitoring --attach --name QUEEN-SADU-MD",
+    "stop": "pm2 stop QUEEN-SADU-MD",
+    "restart": "pm2 restart QUEEN-SADU-MD"
   },
   "dependencies": {
     "@whiskeysockets/baileys": "6.6.0",
