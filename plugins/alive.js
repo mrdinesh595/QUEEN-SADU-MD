@@ -31,7 +31,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
         // Send the status message with an image
         await conn.sendMessage(from, { 
-            image: { url: `https://i.postimg.cc/xdMvP3XZ/In-Shot-20241222-002123636.jpg` },  // Image URL
+            image: { url: `https://i.postimg.cc/q7QwF3JS/20250309-015608.jpg` },  // Image URL
             caption: status,
             contextInfo: {
                 mentionedJid: [m.sender],
