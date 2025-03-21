@@ -1,38 +1,44 @@
-const { cmd, commands } = require('../command');
+const { cmd } = require('../command');
 const os = require("os");
 const { runtime } = require('../lib/functions');
 
 cmd({
     pattern: "alive",
     alias: ["status", "runtime", "uptime"],
+    react: "📟",
     desc: "Check uptime and system status",
     category: "main",
-    react: "📟",
     filename: __filename
-},
-async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
+}, async (conn, mek, m, { from, reply }) => {
     try {
-        // System status message
+        // 🔹 Random Voice (PTT) URLs
+        const voiceLinks = [
+            "https://github.com/mrdinesh595/Mssadu/raw/refs/heads/main/database/alive.mp3",
+            "https://github.com/mrdinesh595/Mssadu/raw/refs/heads/main/database/sadualive2.mp3"
+        ];
+        
+        // 🔹 Select a Random Voice Clip
+        const voiceUrl = voiceLinks[Math.floor(Math.random() * voiceLinks.length)];
+
+        // 📝 Status Message
         const status = `╭━━〔 *QUEEN-SADU-MD* 〕━━┈⊷
 ┃◈╭─────────────·๏
-┃◈┃• *⏳Uptime*:  ${runtime(process.uptime())} 
-┃◈┃• *📟 Ram usage*: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${(os.totalmem() / 1024 / 1024).toFixed(2)}MB
-┃◈┃• *⚙️ HostName*: ${os.hostname()}
-┃◈┃• *👨‍💻 Owner*: ᴍʀ ᴅɪɴᴇꜱʜ
-┃◈┃• *🧬 Version*: V2 BETA
+┃◈┃• *⏳ Uptime:*  ${runtime(process.uptime())} 
+┃◈┃• *📟 RAM Usage:* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${(os.totalmem() / 1024 / 1024).toFixed(2)}MB
+┃◈┃• *⚙️ HostName:* ${os.hostname()}
+┃◈┃• *👨‍💻 Owner:* ᴍʀ ᴅɪɴᴇꜱʜ
+┃◈┃• *🧬 Version:* V2 BETA
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
 
-  𝐪𝐮𝐞𝐞𝐧 𝐬𝐚𝐝𝐮 programing.𝐢𝐦 𝐚𝐥𝐢𝐯𝐞 𝐧𝐨𝐰. 
+  𝐐𝐮𝐞𝐞𝐧 𝐒𝐚𝐝𝐮 𝐢𝐬 𝐀𝐥𝐢𝐯𝐞 𝐍𝐨𝐰! 🎯  
 
+  📌 *Follow our Channel:*  
   https://whatsapp.com/channel/0029Vb0Anqe9RZAcEYc2fT2c
 
-> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ᴅɪɴᴇꜱʜ`;
+> *© Powered by Mr Dinesh*`;
 
-        // Voice message URL (PTT voice message)
-        const voiceUrl = 'https://github.com/mrdinesh595/Mssadu/raw/refs/heads/main/database/alive.mp3';
-
-        // 1. Send PTT Voice First (With Channel View Link)
+        // 🔹 1. Send Random Voice Message (PTT)
         const voiceMessage = await conn.sendMessage(from, {
             audio: { url: voiceUrl },
             mimetype: 'audio/mpeg',
@@ -48,13 +54,15 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
             }
         }, { quoted: mek });
 
-        // Wait for 2 seconds before sending image + text
+        // ⏳ Wait 2 seconds before sending GIF Video
         await new Promise(resolve => setTimeout(resolve, 2000));
 
-        // 2. Send Image + Caption After Voice
+        // 🔹 2. Send GIF Video with Status Caption
         await conn.sendMessage(from, {
-            image: { url: `https://i.postimg.cc/q7QwF3JS/20250309-015608.jpg` }, // Image URL
+            video: { url: `https://files.catbox.moe/zw2cr1.mp4` }, // GIF URL
             caption: status,
+            mimetype: "video/mp4",
+            gifPlayback: true, // Enable GIF Play Mode
             contextInfo: {
                 mentionedJid: [m.sender],
                 forwardingScore: 999,
@@ -69,6 +77,6 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
     } catch (e) {
         console.error("Error in alive command:", e);
-        reply(`An error occurred: ${e.message}`);
+        reply(`❌ Error: ${e.message}`);
     }
 });
