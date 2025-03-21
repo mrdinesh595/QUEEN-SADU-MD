@@ -59,7 +59,7 @@ cmd({
 
         // 🔹 2. Send GIF Video with Status Caption
         await conn.sendMessage(from, {
-            video: { url: `https://files.catbox.moe/vwuw7u.mp4` }, // GIF URL
+            video: { url: `https://files.catbox.moe/mqza2c.mp4` }, // GIF URL
             caption: status,
             mimetype: "video/mp4",
             gifPlayback: true, // Enable GIF Play Mode
